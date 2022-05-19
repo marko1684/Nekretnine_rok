@@ -8,7 +8,7 @@ public class ParkingMesto extends Nekretnina{
         this.natkrivenost = natkrivenost;
     }
 
-    get
+
 
     @Override
     public double isplativostNekretnine() {
@@ -18,5 +18,16 @@ public class ParkingMesto extends Nekretnina{
         else{
             return this.getCena()/this.getKvadratura();
         }
+    }
+
+    @Override
+    public String toString() {
+        String s;
+        if(this.natkrivenost){
+            s = "DA";
+        }else{
+            s = "NE";
+        }
+        return super.getOpstina() + ", " + super.getKmOdCentra() + " kilometara od centra, " + super.getKvadratura() + " m^2, " + super.getCena() + " evra, natkrivenost: " + s;
     }
 }
